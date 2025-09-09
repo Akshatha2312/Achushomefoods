@@ -1,0 +1,133 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff4ec;
+  padding: 10px 20px;   /* ✅ further reduced padding */
+  border-bottom: 1px solid #f3d9c6;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(255, 204, 204, 0.2);
+  animation: slideDown 0.6s ease;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.4rem;   /* ✅ slightly smaller logo text */
+  font-weight: bold;
+  color: #b3475b;
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 0.4px;
+  animation: fadeIn 1s ease-in;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Links Container */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 14px;   /* ✅ tighter spacing */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* Links */
+.navbar-links li a {
+  text-decoration: none;
+  color: #5c4033;
+  font-weight: 500;
+  font-size: 0.9rem;   /* ✅ smaller font */
+  position: relative;
+  padding: 4px 6px;   /* ✅ compact padding */
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Hover underline effect */
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #b3475b;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+.navbar-links li a:hover {
+  color: #a14865;
+}
+
+.navbar-links li .active {
+  color: #b3475b;
+  font-weight: 600;
+}
+
+/* Login/Register Button */
+.login-button {
+  background-color: #c45f79;
+  color: white !important;
+  padding: 5px 12px;  /* ✅ slimmer button */
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #a14865;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 16px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 6px;
+    gap: 10px;
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-links li a {
+    display: block;
+    width: 100%;
+  }
+
+  .login-button {
+    width: 100%;
+    text-align: center;
+  }
+}

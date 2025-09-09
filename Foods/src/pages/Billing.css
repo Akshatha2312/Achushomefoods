@@ -1,0 +1,123 @@
+/* Billing.css */
+.billing-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  background: linear-gradient(to bottom right, #fffaf6, #ffe0b2);
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 1s ease;
+}
+
+.billing-title {
+  color: #6b4f3b;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.4rem;
+  animation: slideDown 0.8s ease;
+}
+
+.billing-form label {
+  font-weight: 600;
+  color: #4e342e;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.billing-form input,
+.billing-form textarea,
+.billing-form .payment-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  background: #fffdf7;
+}
+
+.billing-form input:focus,
+.billing-form textarea:focus,
+.billing-form .payment-select:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 8px rgba(255, 152, 0, 0.3);
+  outline: none;
+}
+
+/* Custom styled dropdown */
+.payment-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20fill%3D%22%234e342e%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22/%3E%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  cursor: pointer;
+}
+
+.billing-form button {
+  background: linear-gradient(to right, #f8b500, #f57c00);
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.billing-form button:hover {
+  background: linear-gradient(to right, #fbc02d, #ef6c00);
+  transform: scale(1.05);
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  border-left: 6px solid #4caf50;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  animation: popUp 0.6s ease;
+}
+
+.success-message h3 {
+  color: #388e3c;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  color: #2e7d32;
+  font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .billing-container {
+    padding: 25px;
+  }
+
+  .billing-form button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

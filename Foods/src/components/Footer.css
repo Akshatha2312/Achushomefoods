@@ -1,0 +1,13 @@
+/* Footer.css */
+
+.footer {
+  background-color: #6b4f3b;
+  color: white;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  flex-shrink: 0;  /* Prevent footer from shrinking in flexbox layout */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: slight shadow for separation */
+}

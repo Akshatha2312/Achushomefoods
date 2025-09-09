@@ -1,0 +1,116 @@
+.about-container {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffdf9;
+  color: #3b2f2f;
+  max-width: 960px;
+  margin: auto;
+  padding: 30px 20px;
+  line-height: 1.7;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-header h1 {
+  font-size: 2.4rem;
+  color: #c7524b;
+  margin-bottom: 5px;
+}
+
+.about-header h2 {
+  font-size: 1.6rem;
+  color: #a14b3f;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #7d5c53;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h3 {
+  font-size: 1.5rem;
+  color: #a14d3a;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 1.05rem;
+  color: #40332f;
+}
+
+.what-we-do ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+}
+
+.what-we-do li {
+  margin-bottom: 6px;
+}
+
+.what-we-do li::before {
+  content: '🍽️ ';
+  margin-right: 6px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.values-grid span {
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 500;
+  background-color: #fff6f1;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.values-grid span:hover {
+  background-color: #ffe1d7;
+}
+
+.about-footer {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #a85a43;
+  margin-top: 40px;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-header h2 {
+    font-size: 1.3rem;
+  }
+
+  section h3 {
+    font-size: 1.3rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

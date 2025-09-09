@@ -1,0 +1,134 @@
+/* src/pages/Profile.css */
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #f9f9f9, #eef2f3);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #2ecc71;
+  transition: transform 0.3s;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+.profile-name {
+  font-size: 26px;
+  color: #2c3e50;
+  margin: 10px 0 5px;
+}
+
+.profile-email {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.profile-section {
+  text-align: left;
+  margin: 20px 0;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.profile-section h3 {
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.order-item {
+  background-color: #f8f8f8;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border-left: 5px solid #27ae60;
+  transition: background-color 0.3s;
+}
+
+.order-item:hover {
+  background-color: #ecf9f1;
+}
+
+.no-orders {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+.profile-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.edit-btn,
+.logout-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.edit-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,14 +1,18 @@
-// src/pages/Login.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useAuth } from '../context/AuthContext';
+import { toast } from 'react-toastify';
+
+// Predefined admin credentials
+const ADMIN_EMAIL = "admin@ecom.com";
+const ADMIN_PASSWORD = "admin123";
 
 function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-  const { login } = useAuth(); // <-- call this after successful login
+  const { login } = useAuth(); // Auth context
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -18,6 +22,17 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
+
+    // ✅ Check for predefined admin login first
+    if (formData.email === ADMIN_EMAIL && formData.password === ADMIN_PASSWORD) {
+      localStorage.setItem('admin', JSON.stringify({ email: ADMIN_EMAIL }));
+      login(); // notify Auth context
+      toast.success("Admin login successful!");
+      navigate('/admin');
+      return;
+    }
+
+    // Normal user login via backend API
     try {
       const res = await fetch('http://localhost:6050/login', {
         method: 'POST',
@@ -28,14 +43,11 @@ function Login() {
       const data = await res.json();
 
       if (res.ok) {
-        // Save token & user locally (you already had this)
         localStorage.setItem('user', JSON.stringify(data.user));
         localStorage.setItem('token', data.token);
 
-        // Notify Auth context that user is logged in
-        login();
-
-        setMessage('✅ Login successful!');
+        login(); // notify Auth context
+        toast.success("User login successful!");
         navigate('/profile');
       } else {
         setMessage(`❌ ${data.message || 'Login failed'}`);
@@ -83,6 +95,10 @@ function Login() {
           <p className="auth-toggle">
             Don't have an account? <Link to="/register">Register here</Link>
           </p>
+{/* 
+          <p className="admin-credentials">
+            Admin login: <b>{ADMIN_EMAIL}</b> / <b>{ADMIN_PASSWORD}</b>
+          </p> */}
         </form>
       </div>
     </div>
